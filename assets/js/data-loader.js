@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return res.json();
     })
     .then((data) => {
+      window.invitationData = data;
       /* =====================================================
          🎵 MUSIC DESDE JSON (NO BORRA NADA)
          ===================================================== */
@@ -27,9 +28,33 @@ document.addEventListener("DOMContentLoaded", () => {
         headerLogo.innerHTML = data.site.couple;
       }
 
+      hideSection(
+        "gallery",
+        !(
+          data.gallery?.type &&
+          (data.gallery?.images?.length || data.gallery?.items?.length)
+        ),
+      );
+      hideSection("timeline", !data.timeline?.items?.length);
+      hideSection("location", !data.location?.places?.length);
+      hideSection("presentation", !data.presentation); // opcional
+      hideSection("dresscode", !data.dresscode); // opcional
+      hideSection("rsvp", !data.rsvp?.whatsapp); // si no hay WhatsApp, se oculta RSVP
       /* =====================================================
          NAV
          ===================================================== */
+      function hideSection(id, condition) {
+        const section = document.getElementById(id);
+        if (section && condition) section.style.display = "none";
+      }
+
+      function sectionVisible(href) {
+        if (!href || !href.startsWith("#")) return true; // links externos
+        const id = href.slice(1);
+        const section = document.getElementById(id);
+        if (!section) return false;
+        return section.style.display !== "none";
+      }
 
       const navLeft = document.getElementById("navLeft");
       const navRight = document.getElementById("navRight");
@@ -37,14 +62,18 @@ document.addEventListener("DOMContentLoaded", () => {
       if (navLeft && data.nav?.left) {
         navLeft.innerHTML = "";
         data.nav.left.forEach((link) => {
-          navLeft.innerHTML += `<a href="${link.href}">${link.label}</a>`;
+          if (sectionVisible(link.href)) {
+            navLeft.innerHTML += `<a href="${link.href}">${link.label}</a>`;
+          }
         });
       }
 
       if (navRight && data.nav?.right) {
         navRight.innerHTML = "";
         data.nav.right.forEach((link) => {
-          navRight.innerHTML += `<a href="${link.href}">${link.label}</a>`;
+          if (sectionVisible(link.href)) {
+            navRight.innerHTML += `<a href="${link.href}">${link.label}</a>`;
+          }
         });
       }
 
@@ -55,8 +84,12 @@ document.addEventListener("DOMContentLoaded", () => {
          HERO
          ===================================================== */
 
-      document.getElementById("heroPretitle").textContent = data.hero.pretitle;
-      document.getElementById("heroNames").textContent = data.hero.names;
+      const heroPretitle = document.getElementById("heroPretitle");
+      const heroNames = document.getElementById("heroNames");
+      const heroSubtitle = document.getElementById("heroSubtitle");
+
+      if (heroPretitle) heroPretitle.textContent = data.hero?.pretitle || "";
+      if (heroNames) heroNames.textContent = data.hero?.names || "";
 
       if (data.hero.subtitle) {
         document.getElementById("heroSubtitle").textContent =
@@ -138,10 +171,14 @@ document.addEventListener("DOMContentLoaded", () => {
       if (locationGrid && data.location?.places) {
         locationGrid.innerHTML = "";
         data.location.places.forEach((place) => {
+          const imagePath = place.image
+            ? `assets/img/location/${place.image}`
+            : "";
+
           locationGrid.innerHTML += `
     <div class="location-card reveal-zoom">
 
-      ${place.image ? `<img src="${place.image}" class="location-img">` : ""}
+      ${place.image ? `<img src="${imagePath}" class="location-img">` : ""}
 
       <h3 class="location-card-title">${place.title}</h3>
       <p class="location-time">${place.time}</p>
@@ -160,13 +197,18 @@ document.addEventListener("DOMContentLoaded", () => {
       /* =====================================================
          TIMELINE
          ===================================================== */
+      const timelineSection = document.getElementById("timeline");
+
+      if (!data.timeline?.items?.length) {
+        if (timelineSection) timelineSection.style.display = "none";
+      }
 
       const timelineTitle = document.getElementById("timelineTitle");
       const timelineContainer = document.getElementById("timelineContainer");
 
       if (timelineTitle) timelineTitle.innerHTML = data.timeline?.title || "";
 
-      if (timelineContainer && data.timeline?.items) {
+      if (timelineContainer && data.timeline?.items?.length) {
         timelineContainer.innerHTML = `<div class="timeline-line"></div>`;
         data.timeline.items.forEach((item, i) => {
           timelineContainer.innerHTML += `
@@ -307,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
           /* =========================
            VACÍO
            ========================= */
-          gallerySection.style.display = "none";
+          if (gallerySection) gallerySection.style.display = "none";
         }
       }
 
