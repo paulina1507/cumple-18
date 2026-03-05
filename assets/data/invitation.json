@@ -57,7 +57,7 @@
       {
         "title": "Ceremonia Religiosa",
         "time": "06:30 PM",
-        "image": "assets/img/ceremonia.png",
+        "image": "assets/img/cerem.png",
         "place": "Catedral Metropolitana de la Ciudad de México",
         "address": "Pl. de la Constitución S/N, Centro Histórico, Cuauhtémoc, CDMX",
         "map": "https://maps.app.goo.gl/spSx4DV2ACTW7YDM7"
@@ -65,7 +65,7 @@
       {
         "title": "Celebración",
         "time": "08:00 PM",
-        "image": "assets/img/recepcion.png",
+        "image": "assets/img/recep.png",
         "place": "Salones Los Espejos",
         "address": "Calle Platino 87 Cuauhtémoc, ó Felipe Pescador Col, Valle Gómez, CDMX",
         "map": "https://maps.app.goo.gl/Vd4NH4t1F54bwYDb9"
