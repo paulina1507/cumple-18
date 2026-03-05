@@ -1,0 +1,71 @@
+:root {
+
+  /* =========================
+     BRAND / IDENTIDAD
+     ========================= */
+  --color-primary: #e8a4c4;        /* Rosa glam principal */
+  --color-accent: #d4a373;         /* Champagne suave */
+  --color-envelope: #f4c2d7;
+
+  /* =========================
+     BACKGROUNDS
+     ========================= */
+  --bg-main: #ffffff;
+  --bg-section: #faf6f8;           /* Rosa ultra claro */
+  --bg-overlay: rgba(0, 0, 0, 0.25);
+
+  /* =========================
+     TEXTOS
+     ========================= */
+  --text-primary: #1f1f1f;
+  --text-secondary: #555555;
+  --text-muted: #8a8a8a;
+  --text-inverse: #ffffff;
+
+  /* =========================
+     LÍNEAS & SOMBRAS
+     ========================= */
+  --line-soft: #f0d6e3;
+  --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.10);
+  --shadow-light: 0 10px 25px rgba(0, 0, 0, 0.06);
+
+  /* =========================
+     TIPOGRAFÍAS
+     ========================= */
+  --font-script: 'Great Vibes', cursive;
+  --font-title: 'Playfair Display', serif;
+  --font-base: 'Poppins', sans-serif;
+
+  /* =========================
+     ESCALA TIPOGRÁFICA
+     ========================= */
+  --fs-hero: 3.8rem;
+  --fs-h1: 3rem;
+  --fs-h2: 2.2rem;
+  --fs-h3: 1.6rem;
+  --fs-body: 1rem;
+  --fs-small: 0.85rem;
+
+  /* =========================
+     ESPACIADOS
+     ========================= */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+
+  /* =========================
+     TRANSICIONES
+     ========================= */
+  --transition-fast: 0.3s ease;
+  --transition-medium: 0.6s ease;
+
+  /* =========================
+     BORDER RADIUS
+     ========================= */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 32px;
+
+}

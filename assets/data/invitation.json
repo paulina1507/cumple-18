@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "pageTitle": "Cumple 18 Valeria Castillo"
+  },
+  "site": {
+    "couple": "Valeria Castillo"
+  },
+  "nav": {
+    "left": [
+      { "label": "Inicio", "href": "#hero" },
+      { "label": "Presentación", "href": "#presentation" },
+      { "label": "Lugar", "href": "#location" }
+    ],
+    "right": [
+      { "label": "Programa", "href": "#timeline" },
+      { "label": "Galería", "href": "#gallery" },
+      { "label": "Confirmación", "href": "#rsvp" }
+    ]
+  },
+  "music": {
+    "src": "assets/audio/cancion.mp3",
+    "autoplay": true
+  },
+  "hero": {
+    "pretitle": "Estás invitado a la fiesta de",
+    "subtitle": "A celebrar sus",
+    "names": "Valeria Castillo",
+    "date": "2026-08-22T18:30:00",
+    "background": "assets/img/hero.png"
+  },
+  "presentation": {
+    "title": "Te invito a celebrar conmigo",
+    "parents": [
+      {
+        "names": ["Ricardo Castillo Vargas", "Laura Mendoza Flores"],
+        "note": "Mis papás"
+      }
+    ],
+    "padrinos": [
+      {
+        "names": ["Fernando López Ortega", "Patricia Ramírez Díaz"],
+        "note": "Mis padrinos"
+      }
+    ],
+    "text": "Hay momentos que merecen celebrarse a lo grande. Acompáñame a festejar mis 18 años en una noche llena de música, alegría y recuerdos inolvidables.",
+    "icon": ""
+  },
+  "gratitude": {
+    "title": "Con cariño",
+    "text": "Gracias por ser parte de mi historia. Tu presencia hará este día aún más especial."
+  },
+  "location": {
+    "title": "Lugar del evento",
+    "subtitle": "Fecha y ubicación",
+    "dateText": "22 · Agosto · 2026",
+    "places": [
+      {
+        "title": "Ceremonia Religiosa",
+        "time": "06:30 PM",
+        "image": "assets/img/ceremonia.png",
+        "place": "Catedral Metropolitana de la Ciudad de México",
+        "address": "Pl. de la Constitución S/N, Centro Histórico, Cuauhtémoc, CDMX",
+        "map": "https://maps.app.goo.gl/spSx4DV2ACTW7YDM7"
+      },
+      {
+        "title": "Celebración",
+        "time": "08:00 PM",
+        "image": "assets/img/recepcion.png",
+        "place": "Salones Los Espejos",
+        "address": "Calle Platino 87 Cuauhtémoc, ó Felipe Pescador Col, Valle Gómez, CDMX",
+        "map": "https://maps.app.goo.gl/Vd4NH4t1F54bwYDb9"
+      }
+    ]
+  },
+  "timeline": {
+    "title": "Programa",
+    "items": [
+      {
+        "time": "06:30 PM",
+        "text": "Llegada de invitados",
+        "icon": "assets/img/3.svg"
+      },
+      { "time": "08:00 PM", "text": "Cena", "icon": "assets/img/6.svg" },
+      {
+        "time": "09:30 PM",
+        "text": "Pastel y fotografías",
+        "icon": "assets/img/7.svg"
+      }
+    ]
+  },
+  "celebration": {
+    "title": "Mis 18",
+    "text": "Prepárate para una noche increíble. Música, baile y momentos para recordar."
+  },
+  "dresscode": {
+    "title": "Código de Vestimenta",
+    "type": "Formal",
+    "image": "assets/img/9.svg",
+    "menTitle": "",
+    "womenTitle": "",
+    "men": [],
+    "women": [],
+    "note": "Formal. Evita tenis, por favor ✨"
+  },
+  "gallery": {
+    "title": "",
+    "type": "images",
+    "images": [
+      "assets/img/1.png",
+      "assets/img/2.png",
+      "assets/img/3.png"
+    ]
+  },
+  "rsvp": {
+    "whatsapp": "522212576641",
+    "title": "Confirmación de Asistencia",
+    "intro": "Me haría muy feliz contar contigo.",
+    "fields": {
+      "namePlaceholder": "Tu nombre",
+      "attendancePlaceholder": "¿Podrás acompañarme?",
+      "attendanceOptions": ["Sí asistiré", "No podré asistir"],
+      "messagePlaceholder": "Mensaje",
+      "buttonText": "Confirmar asistencia"
+    },
+    "note": "Agradezco confirmar antes del <strong>15 de agosto de 2026</strong>.",
+    "success": "¡Gracias por confirmar!"
+  },
+  "footer": {
+    "names": "Cumple 18 de Valeria Castillo",
+    "credits": "Diseñado con amor por Shiny Maker Studio"
+  }
+}

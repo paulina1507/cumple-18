@@ -1,0 +1,147 @@
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4000;
+  background-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+.header.scrolled {
+  background-color: var(--bg-main);
+  box-shadow: var(--shadow-light);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================
+   LOGO
+   ========================= */
+.header-logo a {
+  font-family: var(--font-script);
+  font-size: 2.2rem;
+  color: var(--color-primary);
+}
+
+/* =========================
+   NAV DESKTOP
+   ========================= */
+.nav {
+  display: flex;
+  gap: 1.4rem;
+}
+
+.nav a {
+  font-size: var(--fs-small);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7b69a8;
+  /* lavanda como en la imagen */
+  font-weight: 100;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  background-color: #7b69a8;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   BOTÓN MOBILE
+   ========================= */
+
+.menu-toggle {
+  display: none;
+  /* 👈 oculto por defecto en desktop */
+}
+
+.mobile-menu a {
+  font-size: 1.2rem;
+  font-family: var(--font-title);
+  color: var(--color-primary);
+}
+
+.mobile-close:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+
+  .nav {
+    display: none !important;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 16px;
+    right: 16px;
+
+    width: 52px;
+    height: 52px;
+
+    font-size: 30px;
+    font-weight: 600;
+
+    background: #ffffff;
+    border: none;
+
+    color: #7b69a8;
+
+    cursor: pointer;
+    z-index: 3000;
+  }
+
+  body.menu-open .menu-toggle {
+    color: #000;
+  }
+
+  #mobileNav {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-main);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.35s ease;
+
+    z-index: 2000;
+  }
+
+  body.menu-open #mobileNav {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+}

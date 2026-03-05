@@ -1,0 +1,289 @@
+/* =====================================================
+   HERO – POSTER 18 AÑOS (USANDO VARIABLES)
+   ===================================================== */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  margin-top: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== PARTICULAS ROSA GLAM ===== */
+
+.hero--poster {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero--poster .hero-pretitle {
+  font-size: 0.65rem;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.hero--poster .hero-subtitle {
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.6rem;
+}
+
+.hero--poster::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  background-image:
+    radial-gradient(circle, rgba(232, 164, 196, 0.9) 4px, transparent 6px),
+    radial-gradient(circle, rgba(255, 182, 193, 0.8) 3px, transparent 5px),
+    radial-gradient(circle, rgba(255, 105, 180, 0.6) 2px, transparent 4px);
+
+  background-size:
+    120px 120px,
+    180px 180px,
+    250px 250px;
+  background-position:
+    0 0,
+    60px 60px,
+    100px 100px;
+
+  animation: glitterFast 12s linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes glitterFast {
+  0% {
+    background-position:
+      0 0,
+      60px 60px,
+      100px 100px;
+  }
+  100% {
+    background-position:
+      0 -300px,
+      60px -400px,
+      100px -500px;
+  }
+}
+
+/* Apagar modo cinematográfico */
+.hero--poster .hero-bg,
+.hero--poster .hero-overlay {
+  display: none;
+}
+
+/* ===== Globos ===== */
+
+.hero-deco {
+  position: absolute;
+  width: 260px;
+  opacity: 0.95;
+  filter: drop-shadow(var(--shadow-light));
+  z-index: 1;
+}
+
+.hero-deco-left {
+  left: -20px;
+  bottom: 5%;
+  top: auto;
+}
+
+.hero-deco-right {
+  right: -20px;
+  top: 8%;
+  bottom: auto;
+}
+
+/* ===== Contenido central ===== */
+
+/* ===== 18 PNG ===== */
+
+.hero-age {
+  display: block;
+  width: 180px;
+  margin: 0.2rem auto -0.2rem auto;
+  filter: drop-shadow(0 30px 60px rgba(232, 164, 196, 0.25));
+}
+
+/* ===== Pretitle ===== */
+.hero--poster .hero-pretitle {
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.6em;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* ===== Nombre ===== */
+
+.hero--poster .hero-names {
+  font-family: var(--font-script);
+  font-size: clamp(3rem, 6vw, 4rem);
+  margin-bottom: 0.6rem;
+  color: var(--text-primary);
+  text-shadow: none;
+  line-height: 1.1;
+}
+/* ===== Fecha ===== */
+
+.hero-date-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  font-family: var(--font-title);
+  color: var(--text-primary);
+}
+
+.hero-date-line strong {
+  font-size: 2.2rem;
+}
+
+.hero-date-line span {
+  font-size: var(--fs-small);
+  letter-spacing: 0.15em;
+}
+
+.hero-content--poster {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 2rem 1rem;
+
+  background: transparent;
+  box-shadow: none;
+}
+
+/* ===== Countdown ===== */
+
+.hero--poster .hero-countdown {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.4rem;
+  justify-content: center;
+}
+
+.hero--poster .hero-countdown div {
+  padding: 1rem 1.2rem;
+  min-width: 90px;
+  border-radius: 24px;
+
+  background: linear-gradient(135deg, #000000, #2b2b2b);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+
+  transition: transform 0.3s ease;
+}
+
+.hero--poster .hero-countdown div:hover {
+  transform: translateY(-4px);
+}
+
+.hero--poster .hero-countdown strong {
+  font-size: 1.9rem; /* 👈 tamaño balanceado */
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.hero--poster .hero-countdown span {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.hero--poster::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 1px,
+    transparent 2px
+  );
+
+  background-size: 250px 250px;
+
+  animation: sparklePulse 6s ease-in-out infinite alternate;
+  opacity: 0.2;
+}
+
+@keyframes sparklePulse {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.35;
+  }
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 760px) {
+  .hero-deco {
+    width: 230px;
+    opacity: 0.85;
+  }
+
+  .hero-deco-left {
+    bottom: -5%;
+    left: -80px;
+  }
+
+  .hero-deco-right {
+    top: 7%;
+    right: -105px;
+  }
+
+  .hero-content--poster {
+    padding: 2rem 1.3rem;
+    border-radius: var(--radius-md);
+  }
+
+  .hero--poster .hero-countdown {
+    gap: 0.7rem;
+  }
+
+  .hero--poster .hero-countdown div {
+    min-width: 65px;
+    padding: 0.7rem 0.6rem;
+    border-radius: 20px;
+  }
+
+  .hero--poster .hero-countdown strong {
+    font-size: 1rem;
+  }
+
+  .hero--poster .hero-countdown span {
+    font-size: 0.7rem;
+  }
+}
