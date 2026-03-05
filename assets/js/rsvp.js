@@ -5,8 +5,8 @@ document.getElementById("rsvpForm")?.addEventListener("submit", function (e) {
   const asistencia = document.getElementById("rsvpAttendance").value;
   const mensaje = document.getElementById("rsvpMessage").value.trim();
 
-  if (!nombre) return alert("Por favor escribe tu nombre 😊");
-  if (!asistencia) return alert("Selecciona tu respuesta 😊");
+  if (!nombre) return alert("Por favor escribe tu nombre");
+  if (!asistencia) return alert("Selecciona tu respuesta");
 
   const numeroFiesta = document.getElementById("rsvp")?.dataset.wa;
   if (!numeroFiesta) return alert("Falta configurar el WhatsApp.");

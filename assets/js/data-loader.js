@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("assets/data/invitation.json")
+  fetch("assets/data/invitation.json?v=" + Date.now())
     .then((res) => {
       if (!res.ok) throw new Error("No se pudo cargar invitation.json");
       return res.json();
